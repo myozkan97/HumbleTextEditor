@@ -43,6 +43,7 @@ public class HumbleTextEditor {
     private AlignCenterCommand alignCenterCommand;
     private FindCommand findCommand;
     private FindAndReplaceCommand findAndReplaceCommand;
+    private UndoCommand undoCommand;
 
 
     public HumbleTextEditor() {
@@ -52,6 +53,14 @@ public class HumbleTextEditor {
         alignRightCommand = new AlignRightCommand(textPane);
         alignCenterCommand = new AlignCenterCommand(textPane);
         findAndReplaceCommand = new FindAndReplaceCommand(textPane);
+        undoCommand = new UndoCommand(textPane);
+
+        undoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                undoCommand.execute();
+            }
+        });
 
 
         leftButton.addActionListener(new ActionListener() {
