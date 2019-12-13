@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.humbletexteditor.HumbleTextEditor">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="800" height="600"/>
+    </constraints>
+    <properties>
+      <minimumSize width="800" height="600"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="f5054" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <toolbar id="dc6ed">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="20"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="cef78" class="javax.swing.JButton" binding="leftButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Left"/>
+                </properties>
+              </component>
+              <component id="a9c4c" class="javax.swing.JButton" binding="centerButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Center"/>
+                </properties>
+              </component>
+              <component id="a6a69" class="javax.swing.JButton" binding="rightButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Right"/>
+                </properties>
+              </component>
+              <component id="8e957" class="javax.swing.JButton" binding="findButton">
+                <constraints/>
+                <properties>
+                  <text value="Find"/>
+                </properties>
+              </component>
+              <component id="7d724" class="javax.swing.JButton" binding="findAndReplaceButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Find and Replace"/>
+                </properties>
+              </component>
+              <vspacer id="2fcdb">
+                <constraints/>
+              </vspacer>
+              <component id="9355b" class="javax.swing.JButton" binding="undoButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Undo"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
+          <scrollpane id="97462">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ae4ca" class="javax.swing.JTextPane" binding="textPane">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
