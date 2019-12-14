@@ -40,12 +40,17 @@ public class HumbleTextEditor {
     private JMenu fileMenu, aboutMenu;
 
 
+
     private AlignLeftCommand alignLeftCommand;
     private AlignRightCommand alignRightCommand;
     private AlignCenterCommand alignCenterCommand;
     private FindCommand findCommand;
     private FindAndReplaceCommand findAndReplaceCommand;
     private UndoCommand undoCommand;
+    private OpenFileCommand openFileCommand;
+    private SaveFileCommand saveFileCommand;
+    private NewFileCommand newFileCommand;
+
 
 
     public HumbleTextEditor() {
@@ -56,6 +61,42 @@ public class HumbleTextEditor {
         alignCenterCommand = new AlignCenterCommand(textPane);
         findAndReplaceCommand = new FindAndReplaceCommand(textPane);
         undoCommand = new UndoCommand(textPane);
+
+        saveFileCommand = new SaveFileCommand(textPane);
+        newFileCommand = new NewFileCommand(textPane);
+        openFileCommand = new OpenFileCommand(textPane);
+
+        menuBar = new JMenuBar();
+        fileMenu = new JMenu("File");
+        aboutMenu = new JMenu("About");
+        menuBar.add(fileMenu);
+        menuBar.add(aboutMenu);
+
+        fileMenu.add(new JMenuItem("New")).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                newFileCommand.execute();
+            }
+        });
+
+
+        fileMenu.add(new JMenuItem("Save")).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveFileCommand.execute();
+            }
+        });
+
+
+        fileMenu.add(new JMenuItem("Open")).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openFileCommand.execute();
+            }
+        });
+
+
+
 
         undoButton.addActionListener(new ActionListener() {
             @Override
@@ -104,8 +145,15 @@ public class HumbleTextEditor {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Humble Text Editor");
         frame.setMinimumSize(new Dimension(800, 600));
-        frame.setContentPane(new HumbleTextEditor().panel1);
+        HumbleTextEditor humbleTextEditor = new HumbleTextEditor();
+        frame.setContentPane(humbleTextEditor.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+        frame.setJMenuBar(humbleTextEditor.menuBar);
+
+
         frame.pack();
         frame.setVisible(true);
     }
