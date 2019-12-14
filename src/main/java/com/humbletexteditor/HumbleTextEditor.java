@@ -36,6 +36,8 @@ public class HumbleTextEditor {
     private JButton findButton;
     private JButton findAndReplaceButton;
     private JButton undoButton;
+    private JMenuBar menuBar;
+    private JMenu fileMenu, aboutMenu;
 
 
     private AlignLeftCommand alignLeftCommand;

@@ -6,7 +6,7 @@ import javax.swing.undo.UndoManager;
 import java.awt.event.ActionEvent;
 
 public class UndoAction extends AbstractAction {
-    UndoManager undoManager;
+    private UndoManager undoManager;
 
 
     public UndoAction(JTextPane textPane) {
@@ -18,7 +18,6 @@ public class UndoAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
         try {
             undoManager.undo();
-            System.out.println("UNDO ACTION");
         } catch (CannotUndoException exc) {
             System.out.println(exc.getMessage());
         }
